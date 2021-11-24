@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.atharva</groupId>
-	<artifactId>microservice</artifactId>
+	<artifactId>naming-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Naming-service</name>
 	<description>Demo project for Spring Boot microservice</description>
@@ -61,6 +61,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+					<name>atharvadev/${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
